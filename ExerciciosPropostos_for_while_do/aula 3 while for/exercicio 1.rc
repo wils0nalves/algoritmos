@@ -1,0 +1,30 @@
+//dado uma divida de 10mil que cresce ao juros de 2.5 por cento e a aplicação de 1500 reais com rendimento de 4 por cento ao mes,escreva um programa que
+ //determina o numero de meses necessarios para pagar a divida
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+main(){
+
+setlocale(LC_ALL,"Portuguese");
+
+int meses;
+float divida = 10000,meses = 0,juros = 0.025,apl = 1500,renda = 0.04;
+
+while (divida > apl)
+{
+      divida = ((divida * juros)+divida);
+      apl = (apl * renda)+apl;
+      meses++;
+      }
+      
+      printf("QUANTIDADE DE MESES PARA LIQUIDAR A DIVIDA É %d\n",meses);
+      
+      printf("SUA DÍVIDA ESTÁ EM %f\n",divida);
+      
+      printf("SUA APLICAÇÃO ESTÁ EM %f\n",apl);
+
+
+
+system("pause");
+}
